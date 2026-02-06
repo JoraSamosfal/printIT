@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="ro" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>printIT Growth System - Strategic Roadmap</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Orbitron:wght@700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --yellow-electric: #FFE500;
+      --bg-black: #0a0a0a;
+      --gray-dark: #1a1a1a;
+      --gray-medium: #2a2a2a;
+      --blue-neon: #00D4FF;
+      --orange-accent: #FF6B00;
+    }
+
+    .font-orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .font-space {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .gradient-hero {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    }
+
+    .glow-yellow {
+      box-shadow: 0 0 30px rgba(255, 229, 0, 0.4), 0 0 60px rgba(255, 229, 0, 0.2);
+    }
+
+    .glow-blue {
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    }
+
+    .card-neon {
+      background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+      border: 1px solid #333;
+      transition: all 0.3s ease;
+    }
+
+    .card-neon:hover {
+      transform: translateY(-5px);
+      border-color: var(--yellow-electric);
+      box-shadow: 0 10px 40px rgba(255, 229, 0, 0.15);
+    }
+
+    .grid-3d {
+      background-image:
+        radial-gradient(circle at 20px 20px, #2a2a2a 8px, transparent 8px),
+        radial-gradient(circle at 60px 60px, #2a2a2a 8px, transparent 8px);
+      background-size: 80px 80px;
+    }
+
+    .phase-block {
+      position: relative;
+      padding: 2rem;
+      border-left: 4px solid #FFE500;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border-radius: 0.5rem;
+    }
+
+    .phase-block.phase-2 {
+      border-left-color: #00D4FF;
+    }
+
+    .phase-block.phase-3 {
+      border-left-color: #FF6B00;
+    }
+
+    .funnel-item {
+      position: relative;
+      padding: 1rem;
+      background: rgba(255, 229, 0, 0.05);
+      border: 1px solid rgba(255, 229, 0, 0.2);
+      border-radius: 0.5rem;
+      text-align: center;
+    }
+
+    .funnel-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      color: #FFE500;
+      font-size: 1.5rem;
+    }
+
+    .team-card {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border: 1px solid #333;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      text-align: center;
+    }
+
+    .team-card:hover {
+      border-color: #FFE500;
+      box-shadow: 0 8px 25px rgba(255, 229, 0, 0.15);
+    }
+
+    .kpi-stat {
+      background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid #333;
+      text-align: center;
+    }
+
+    .kpi-stat.highlight {
+      border-color: #FFE500;
+      background: linear-gradient(145deg, #FFE500, #1a1a1a);
+    }
+
+    .animate-pulse-slow {
+      animation: pulse-slow 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      background: #FFE500;
+      border-radius: 50%;
+      border: 2px solid #0a0a0a;
+    }
+
+    .timeline-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 12px;
+      width: 2px;
+      height: calc(100% + 1rem);
+      background: linear-gradient(180deg, #FFE500, #00D4FF);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-space bg-[#0a0a0a] text-white overflow-x-hidden">
+  <div id="app-wrapper" class="w-full h-full overflow-auto"><!-- Header -->
+   <header class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+     <div class="flex items-center gap-2">
+      <svg width="40" height="40" viewbox="0 0 40 40" fill="none" class="animate-float"><rect x="5" y="5" width="12" height="12" rx="2" fill="#FFE500" /> <rect x="20" y="5" width="12" height="12" rx="2" fill="#00D4FF" /> <rect x="5" y="20" width="12" height="12" rx="2" fill="#FF6B00" /> <rect x="20" y="20" width="12" height="12" rx="2" fill="#FFE500" /> <circle cx="11" cy="11" r="3" fill="#0a0a0a" /> <circle cx="26" cy="11" r="3" fill="#0a0a0a" /> <circle cx="11" cy="26" r="3" fill="#0a0a0a" /> <circle cx="26" cy="26" r="3" fill="#0a0a0a" />
+      </svg><span class="font-orbitron text-xl font-bold">print<span class="text-[#FFE500]">IT</span> Growth</span>
+     </div>
+     <div class="hidden md:flex items-center gap-4"><a href="#strategy" class="text-gray-400 hover:text-[#FFE500] transition-all text-sm">Strategie</a> <a href="#scaling" class="text-gray-400 hover:text-[#FFE500] transition-all text-sm">Scalare</a> <a href="#team" class="text-gray-400 hover:text-[#FFE500] transition-all text-sm">Echipă</a>
+     </div>
+    </div>
+   </header><!-- HERO SECTION -->
+   <section class="gradient-hero min-h-[100%] pt-24 pb-16 md:pb-20 relative overflow-hidden">
+    <div class="absolute inset-0 grid-3d opacity-20"></div>
+    <div class="absolute top-20 right-0 w-96 h-96 bg-[#FFE500]/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#00D4FF]/5 rounded-full blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+     <div class="text-center mb-16">
+      <h1 id="hero-title" class="font-orbitron text-3xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">print<span class="text-[#FFE500]">IT</span> Growth System</h1>
+      <p id="hero-subtitle" class="text-gray-400 text-lg md:text-2xl mb-8 max-w-3xl mx-auto">Planul complet pentru <span class="text-[#FFE500]">dominarea pieței</span> de printare 3D în România</p>
+      <p class="text-gray-500 mb-8">De la primele reclame până la scalare națională</p><a href="#strategy" class="inline-block bg-[#FFE500] text-black font-bold text-lg px-10 py-4 rounded-xl hover:bg-[#FFC800] transition-all glow-yellow"> Vezi strategia completă </a>
+     </div><!-- Hero Visual Stats -->
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
+      <div class="card-neon rounded-xl p-4 text-center">
+       <p class="text-3xl font-bold text-[#FFE500] mb-2">100%</p>
+       <p class="text-sm text-gray-400">Automation</p>
+      </div>
+      <div class="card-neon rounded-xl p-4 text-center">
+       <p class="text-3xl font-bold text-[#00D4FF] mb-2">24h</p>
+       <p class="text-sm text-gray-400">Response Time</p>
+      </div>
+      <div class="card-neon rounded-xl p-4 text-center">
+       <p class="text-3xl font-bold text-[#FF6B00] mb-2">Naț.</p>
+       <p class="text-sm text-gray-400">Coverage</p>
+      </div>
+      <div class="card-neon rounded-xl p-4 text-center">
+       <p class="text-3xl font-bold text-[#FFE500] mb-2">10x</p>
+       <p class="text-sm text-gray-400">Growth Rate</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- VISION & MISSION -->
+   <section class="py-12 md:py-20 bg-[#1a1a1a] border-y border-gray-800">
+    <div class="max-w-7xl mx-auto px-4">
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-12"><!-- Vision -->
+      <div class="card-neon rounded-2xl p-8">
+       <h3 class="font-orbitron text-2xl font-bold mb-4 text-[#FFE500]">VIZIUNE</h3>
+       <p class="text-gray-300 text-lg leading-relaxed mb-4">Să fim <strong>liderul piețelor de printare 3D în România</strong>, recunoscuți pentru calitate, viteză și inovație.</p>
+       <p class="text-gray-400 italic">"Fiecare idee merită să devină realitate, rapid și fără complicații."</p>
+      </div><!-- Mission -->
+      <div class="card-neon rounded-2xl p-8 border-l-4 border-[#00D4FF]">
+       <h3 class="font-orbitron text-2xl font-bold mb-4 text-[#00D4FF]">MISIUNE</h3>
+       <p class="text-gray-300 text-lg leading-relaxed mb-4">Transformăm ideile în produse reale prin printare 3D, fără bătăi de cap, cu transparență și consultanță inclusă.</p>
+       <p class="text-gray-400 italic">"Idei transformate în produse reale, rapid și fără bătăi de cap."</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- VALORI DE BRAND -->
+   <section class="py-12 md:py-20 bg-[#0a0a0a]">
+    <div class="max-w-7xl mx-auto px-4">
+     <h2 class="font-orbitron text-3xl md:text-5xl font-bold text-center mb-12">Cele 5 <span class="text-[#FFE500]">Valori</span> ale brandului</h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4"><!-- Rapiditate -->
+      <div class="card-neon rounded-xl p-6 text-center">
+       <div class="w-12 h-12 mx-auto mb-4 bg-[#FFE500]/20 rounded-lg flex items-center justify-center">
+        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="#FFE500" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8Z" />
+        </svg>
+       </div>
+       <h4 class="font-bold text-lg mb-2">Rapiditate</h4>
+       <p class="text-sm text-gray-400">Răspuns în 24h, livrare în 2-5 zile</p>
+      </div><!-- Precizie -->
+      <div class="card-neon rounded-xl p-6 text-center">
+       <div class="w-12 h-12 mx-auto mb-4 bg-[#00D4FF]/20 rounded-lg flex items-center justify-center">
+        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2"><path d="M12 2L6 10h12L12 2Z" /> <path d="M6 10L2 20h20L18 10" />
+        </svg>
+       </div>
+       <h4 class="font-bold text-lg mb-2">Precizie</h4>
+       <p class="text-sm text-gray-400">Toleranțe sub 0.5mm, QC profesional</p>
+      </div><!-- Consultanță -->
+      <div class="card-neon rounded-xl p-6 text-center">
+       <div class="w-12 h-12 mx-auto mb-4 bg-[#FF6B00]/20 rounded-lg flex items-center justify-center">
+        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2"><path d="M21 15a2 2 0 0119 17H7L3 21V5a2 2 0 015 3H19a2 2 0 015 3V15Z" />
+        </svg>
+       </div>
+       <h4 class="font-bold text-lg mb-2">Consultanță</h4>
+       <p class="text-sm text-gray-400">Design optimization, material choice</p>
+      </div><!-- Transparență -->
+      <div class="card-neon rounded-xl p-6 text-center">
+       <div class="w-12 h-12 mx-auto mb-4 bg-[#FFE500]/20 rounded-lg flex items-center justify-center">
+        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="#FFE500" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /> <circle cx="12" cy="12" r="3" />
+        </svg>
+       </div>
+       <h4 class="font-bold text-lg mb-2">Transparență</h4>
+       <p class="text-sm text-gray-400">Preț clar, fără surprize, tracking real-time</p>
+      </div><!-- Scalabilitate -->
+      <div class="card-neon rounded-xl p-6 text-center">
+       <div class="w-12 h-12 mx-auto mb-4 bg-[#00D4FF]/20 rounded-lg flex items-center justify-center">
+        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2"><path d="M3 12h18M3 6h18m-18 12h18M8 2v20M16 2v20" />
+        </svg>
+       </div>
+       <h4 class="font-bold text-lg mb-2">Scalabilitate</h4>
+       <p class="text-sm text-gray-400">De la 1 bucată la 1000 bucăți</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- SERVICII & OFERTĂ -->
+   <section class="py-12 md:py-20 bg-[#1a1a1a]">
+    <div class="max-w-7xl mx-auto px-4">
+     <h2 class="font-orbitron text-3xl md:text-5xl font-bold text-center mb-12">Portofoliu de <span class="text-[#FFE500]">Servicii</span></h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card-neon rounded-2xl p-8">
+       <div class="text-4xl mb-4">
+        📐
+       </div>
+       <h3 class="font-bold text-xl mb-3">Modelare CAD</h3>
+       <p class="text-gray-400">Design 3D de la zero, optimizare modele existente, consultanță material</p>
+      </div>
+      <div class="card-neon rounded-2xl p-8">
+       <div class="text-4xl mb-4">
+        🖨️
+       </div>
+       <h3 class="font-bold text-xl mb-3">Printare FDM</h3>
+       <p class="text-gray-400">PLA, PETG, ABS, TPU flexibil, toleranțe sub 0.5mm</p>
+      </div>
+      <div class="card-neon rounded-2xl p-8">
+       <div class="text-4xl mb-4">
+        💎
+       </div>
+       <h3 class="font-bold text-xl mb-3">Printare Resin</h3>
+       <p class="text-gray-400">UV resin, SLA technology, detalii extreme</p>
+      </div>
+      <div class="card-neon rounded-2xl p-8">
+       <div class="text-4xl mb-4">
+        🔧
+       </div>
+       <h3 class="font-bold text-xl mb-3">Prototipare Rapidă</h3>
+       <p class="text-gray-400">De la concept la prototip în 24-48h, testare funcțional</p>
+      </div>
+      <div class="card-neon rounded-2xl p-8">
+       <div class="text-4xl mb-4">
+        📦
+       </div>
+       <h3 class="font-bold text-xl mb-3">Producție Serie Mică</h3>
+       <p class="text-gray-400">50-1000 bucăți, QC profesional, ambalare custom</p>
+      </div>
+      <div class="card-neon rounded-2xl p-8">
+       <div class="text-4xl mb-4">
+        🚚
+       </div>
+       <h3 class="font-bold text-xl mb-3">Livrare Națională</h3>
+       <p class="text-gray-400">Transport gratuit în toată România, tracking real-time</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- STRATEGIE MARKETING -->
+   <section id="strategy" class="py-12 md:py-20 bg-[#0a0a0a]">
+    <div class="max-w-7xl mx-auto px-4">
+     <h2 class="font-orbitron text-3xl md:text-5xl font-bold text-center mb-4">📣 Strategie Completă de <span class="text-[#FFE500]">Marketing</span></h2>
+     <p class="text-gray-400 text-center mb-12 max-w-3xl mx-auto">Multi-channel approach pentru dominare de piață: Paid Ads, Organic Social, YouTube, Email &amp; Retargeting</p><!-- PAID ADS -->
+     <div class="mb-16">
+      <h3 class="font-orbitron text-2xl md:text-3xl font-bold mb-8 text-[#FFE500]">🎯 PAID ADS – Facebook / Instagram</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+       <div class="card-neon rounded-xl p-6 border-l-4 border-[#FFE500]">
+        <h4 class="font-bold text-lg mb-3">Targetting &amp; Audience</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+         <li>✓ Interest: design, engineering, startups</li>
+         <li>✓ Location: România, business owners</li>
+         <li>✓ Budget: €50-150/zi progressive</li>
+         <li>✓ Lookalike audiences din converters</li>
+        </ul>
+       </div>
+       <div class="card-neon rounded-xl p-6 border-l-4 border-[#FFE500]">
+        <h4 class="font-bold text-lg mb-3">Formular &amp; Lead Capture</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+         <li>✓ Instant forms cu WhatsApp CTA</li>
+         <li>✓ Landing page personalizată</li>
+         <li>✓ Automație SMS + email follow-up</li>
+         <li>✓ Scoring lead quality</li>
+        </ul>
+       </div>
+       <div class="card-neon rounded-xl p-6 border-l-4 border-[#00D4FF]">
+        <h4 class="font-bold text-lg mb-3">Creativitate &amp; Testing</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+         <li>✓ Weekly creative rotation</li>
+         <li>✓ A/B testing: copy, image, CTA</li>
+         <li>✓ Video ads (60 sec) vs static</li>
+         <li>✓ Carousel ads: before/after prints</li>
+        </ul>
+       </div>
+       <div class="card-neon rounded-xl p-6 border-l-4 border-[#00D4FF]">
+        <h4 class="font-bold text-lg mb-3">Optimization &amp; Scaling</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+         <li>✓ Target CPA: €2-5 per lead</li>
+         <li>✓ Scale 10% daily if profitable</li>
+         <li>✓ Shift budget to top performers</li>
+         <li>✓ Retargeting 30-day window</li>
+        </ul>
+       </div>
+      </div>
+     </div><!-- CREATIVE CONTENT -->
+     <div class="mb-16">
+      <h3 class="font-orbitron text-2xl md:text-3xl font-bold mb-8 text-[#00D4FF]">🎥 CREATIVES CARE CONVERTESC</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+       <div class="bg-[#1a1a1a] rounded-lg p-4 border border-gray-800">
+        <p class="font-bold text-[#FFE500] mb-2">Before/After Print</p>
+        <p class="text-sm text-gray-400">Split screen: design CAD vs parte printată, highlight precizie</p>
+       </div>
+       <div class="bg-[#1a1a1a] rounded-lg p-4 border border-gray-800">
+        <p class="font-bold text-[#00D4FF] mb-2">Time-Lapse Printing</p>
+        <p class="text-sm text-gray-400">60 sec video, imprimantă functionând, satisfying smooth motion</p>
+       </div>
+       <div class="bg-[#1a1a1a] rounded-lg p-4 border border-gray-800">
+        <p class="font-bold text-[#FF6B00] mb-2">Fail → Fix Story</p>
+        <p class="text-sm text-gray-400">First attempt failed, second succeeded — showing expertise</p>
+       </div>
+       <div class="bg-[#1a1a1a] rounded-lg p-4 border border-gray-800">
+        <p class="font-bold text-[#FFE500] mb-2">Satisfying Macro Shots</p>
+        <p class="text-sm text-gray-400">Close-up de textura, detalii super fine, part reveal</p>
+       </div>
+       <div class="bg-[#1a1a1a] rounded-lg p-4 border border-gray-800">
+        <p class="font-bold text-[#00D4FF] mb-2">Customer Reaction</p>
+        <p class="text-sm text-gray-400">Client unboxing / reacting la parte finală, authentic testimonial</p>
+       </div>
+       <div class="bg-[#1a1a1a] rounded-lg p-4 border border-gray-800">
+        <p class="font-bold text-[#FF6B00] mb-2">Industrial Showcase</p>
+        <p class="text-sm text-gray-400">Functional prototypes, technical complexity, problem-solving</p>
+       </div>
+      </div>
+     </div><!-- ORGANIC SOCIAL -->
+     <div class="mb-16">
+      <h3 class="font-orbitron text-2xl md:text-3xl font-bold mb-8 text-[#FFE500]">📱 ORGANIC SOCIAL – TikTok / Reels / Shorts</h3>
+      <div class="card-neon rounded-xl p-8">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+         <h4 class="font-bold text-lg mb-4 text-[#FFE500]">Posting Strategy</h4>
+         <ul class="space-y-2 text-gray-400">
+          <li>📅 <strong>2-3 postări zilnic</strong> pe TikTok</li>
+          <li>🎬 Same content repurposed pe Reels + Shorts</li>
+          <li>⏱️ Publicare: 8AM, 1PM, 6PM (peak hours)</li>
+          <li>🔥 Hook în primele 2 secunde MANDATORY</li>
+         </ul>
+        </div>
+        <div>
+         <h4 class="font-bold text-lg mb-4 text-[#00D4FF]">Content Elements</h4>
+         <ul class="space-y-2 text-gray-400">
+          <li>🎵 Viral sounds + mechanical printing sounds</li>
+          <li>✏️ Subtitles MARI (white text, impact font)</li>
+          <li>🎨 Yellow/black overlays (brand consistency)</li>
+          <li>📍 Hashtags: #printIT #3Dprinting #engineering</li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div><!-- YOUTUBE -->
+     <div class="mb-16">
+      <h3 class="font-orbitron text-2xl md:text-3xl font-bold mb-8 text-[#00D4FF]">🎬 YOUTUBE STRATEGY</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+       <div class="card-neon rounded-xl p-6">
+        <h4 class="font-bold text-lg mb-4">Format &amp; Schedule</h4>
+        <ul class="space-y-2 text-gray-400">
+         <li>✓ <strong>Weekly vlog</strong> (10-15 min) din atelier</li>
+         <li>✓ Process videos: design → print → delivery</li>
+         <li>✓ Behind-the-scenes, team moments</li>
+         <li>✓ Upload joi, 7PM (optimization)</li>
+        </ul>
+       </div>
+       <div class="card-neon rounded-xl p-6">
+        <h4 class="font-bold text-lg mb-4">Content Pillars</h4>
+        <ul class="space-y-2 text-gray-400">
+         <li>✓ "Am printat X pentru client" case studies</li>
+         <li>✓ PLA vs ABS vs PETG comparisons</li>
+         <li>✓ Cost breakdown: material, time, margin</li>
+         <li>✓ Q&amp;A episoade din comunitate</li>
+        </ul>
+       </div>
+      </div>
+     </div><!-- BRAND IDENTITY -->
+     <div>
+      <h3 class="font-orbitron text-2xl md:text-3xl font-bold mb-8 text-[#FF6B00]">📲 STIL UNIC DE BRAND</h3>
+      <div class="card-neon rounded-xl p-8 border-l-4 border-[#FF6B00]">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+         <h4 class="font-bold mb-3 text-[#FF6B00]">Visual Identity</h4>
+         <ul class="space-y-2 text-gray-400">
+          <li>🟨 Gabenon yellow overlay corner</li>
+          <li>🎬 3-sec intro animation (logo + printIT sound)</li>
+          <li>📝 Font: Orbitron bold (headers)</li>
+          <li>🔊 Signature sound: mechanical printer noise</li>
+         </ul>
+        </div>
+        <div>
+         <h4 class="font-bold mb-3 text-[#FF6B00]">Community Building</h4>
+         <ul class="space-y-2 text-gray-400">
+          <li>#printIT — proprietary hashtag</li>
+          <li>Mentioning customers în stories</li>
+          <li>Repost user-generated content</li>
+          <li>Monthly community spotlight</li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- FUNNEL DE VÂNZARE -->
+   <section class="py-12 md:py-20 bg-[#1a1a1a]">
+    <div class="max-w-7xl mx-auto px-4">
+     <h2 class="font-orbitron text-3xl md:text-5xl font-bold text-center mb-12">🔁 Funnel de <span class="text-[#FFE500]">Vânzare</span></h2>
+     <div class="flex flex-col md:flex-row items-center justify-center gap-0 bg-[#0a0a0a] rounded-2xl p-4 overflow-x-auto"><!-- Ads -->
+      <div class="funnel-item flex-1 min-w-[140px] md:min-w-auto">
+       <p class="font-bold text-[#FFE500] mb-1">ADS</p>
+       <p class="text-xs text-gray-400">Facebook / Instagram</p>
+      </div>
+      <div class="funnel-arrow text-2xl">
+       →
+      </div><!-- Form -->
+      <div class="funnel-item flex-1 min-w-[140px] md:min-w-auto">
+       <p class="font-bold text-[#00D4FF] mb-1">FORMULAR</p>
+       <p class="text-xs text-gray-400">Lead capture instant</p>
+      </div>
+      <div class="funnel-arrow text-2xl">
+       →
+      </div><!-- Call -->
+      <div class="funnel-item flex-1 min-w-[140px] md:min-w-auto">
+       <p class="font-bold text-[#FF6B00] mb-1">CALL 5 MIN</p>
+       <p class="text-xs text-gray-400">Calificare real-time</p>
+      </div>
+      <div class="funnel-arrow text-2xl">
+       →
+      </div><!-- Quote -->
+      <div class="funnel-item flex-1 min-w-[140px] md:min-w-auto">
+       <p class="font-bold text-[#FFE500] mb-1">OFERTĂ</p>
+       <p class="text-xs text-gray-400">Email + WhatsApp</p>
+      </div>
+      <div class="funnel-arrow text-2xl">
+       →
+      </div><!-- Production -->
+      <div class="funnel-item flex-1 min-w-[140px] md:min-w-auto">
+       <p class="font-bold text-[#00D4FF] mb-1">PRODUCȚIE</p>
+       <p class="text-xs text-gray-400">QC + tracking</p>
+      </div>
+      <div class="funnel-arrow text-2xl">
+       →
+      </div><!-- Delivery -->
+      <div class="funnel-item flex-1 min-w-[140px] md:min-w-auto">
+       <p class="font-bold text-[#FF6B00] mb-1">LIVRARE</p>
+       <p class="text-xs text-gray-400">Gratuit nationwide</p>
+      </div>
+      <div class="funnel-arrow text-2xl">
+       →
+      </div><!-- Review -->
+      <div class="funnel-item flex-1 min-w-[140px] md:min-w-auto">
+       <p class="font-bold text-[#FFE500] mb-1">REVIEW</p>
+       <p class="text-xs text-gray-400">Testimonial + case</p>
+      </div>
+      <div class="funnel-arrow text-2xl">
+       →
+      </div><!-- Retarget -->
+      <div class="funnel-item flex-1 min-w-[140px] md:min-w-auto">
+       <p class="font-bold text-[#00D4FF] mb-1">RETARGET</p>
+       <p class="text-xs text-gray-400">Upsell + next order</p>
+      </div>
+     </div><!-- Funnel Metrics -->
+     <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="card-neon rounded-lg p-4 text-center">
+       <p class="text-2xl font-bold text-[#FFE500]">1000+</p>
+       <p class="text-sm text-gray-400">Monthly ads reach</p>
+      </div>
+      <div class="card-neon rounded-lg p-4 text-center">
+       <p class="text-2xl font-bold text-[#00D4FF]">10-15%</p>
+       <p class="text-sm text-gray-400">Lead conversion rate</p>
+      </div>
+      <div class="card-neon rounded-lg p-4 text-center">
+       <p class="text-2xl font-bold text-[#FF6B00]">30-40%</p>
+       <p class="text-sm text-gray-400">Quote-to-order ratio</p>
+      </div>
+      <div class="card-neon rounded-lg p-4 text-center">
+       <p class="text-2xl font-bold text-[#FFE500]">4-6</p>
+       <p class="text-sm text-gray-400">Week payback period</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- SCALING PLAN -->
+   <section id="scaling" class="py-12 md:py-20 bg-[#0a0a0a]">
+    <div class="max-w-7xl mx-auto px-4">
+     <h2 class="font-orbitron text-3xl md:text-5xl font-bold text-center mb-4">📈 Plan de Scalare în 3 <span class="text-[#FFE500]">FAZE</span></h2>
+     <p class="text-gray-400 text-center mb-12">De la startup la market leader</p>
+     <div class="space-y-8"><!-- FAZA 1 -->
+      <div class="phase-block phase-1">
+       <div class="flex items-center gap-4 mb-4">
+        <div class="w-12 h-12 bg-[#FFE500] text-black rounded-full flex items-center justify-center font-bold text-lg">
+         1
+        </div>
+        <h3 id="phase1-title" class="font-orbitron text-2xl font-bold">FAZA 1 – STARTUP (Luni 1-3)</h3>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+         <h4 class="font-bold text-[#FFE500] mb-3">🖨️ Equipmente &amp; Setup</h4>
+         <ul class="space-y-2 text-gray-300">
+          <li>✓ 2-3 imprimante FDM (Prusa i3 MK3+)</li>
+          <li>✓ 1 printer resin pentru detalii</li>
+          <li>✓ Software: Cura + pre-processing</li>
+          <li>✓ Atelier minimal 20m²</li>
+         </ul>
+        </div>
+        <div>
+         <h4 class="font-bold text-[#FFE500] mb-3">💼 Operațional &amp; Echipă</h4>
+         <ul class="space-y-2 text-gray-300">
+          <li>✓ 1 Founder = Sales + Design</li>
+          <li>✓ 1 Operator (production)</li>
+          <li>✓ CRM manual (Google Sheets)</li>
+          <li>✓ 24h customer support</li>
+         </ul>
+        </div>
+        <div>
+         <h4 class="font-bold text-[#FFE500] mb-3">📣 Marketing Budget</h4>
+         <ul class="space-y-2 text-gray-300">
+          <li>✓ €20-50/zi Facebook ads</li>
+          <li>✓ Organic TikTok/Reels (free)</li>
+          <li>✓ Google My Business</li>
+          <li>✓ Landing page simple</li>
+         </ul>
+        </div>
+        <div>
+         <h4 class="font-bold text-[#FFE500] mb-3">🎯 Ținte Lună 3</h4>
+         <ul class="space-y-2 text-gray-300">
+          <li>✓ 50+ comenzi primite</li>
+          <li>✓ 15-20 comenzi finalizate</li>
+          <li>✓ €3-5K revenue</li>
+          <li>✓ First testimonials + reviews</li>
+         </ul>
+        </div>
+       </div>
+      </div><!-- FAZA 2 -->
+      <div class="phase-block phase-2">
+       <div class="flex items-center gap-4 mb-4">
+        <div class="w-12 h-12 bg-[#00D4FF] text-black rounded-full flex items-center justify-center font-bold text-lg">
+         2
+        </div>
+        <h3 id="phase2-title" class="font-orbitron text-2xl font-bold">FAZA 2 – GROWTH (Luni 4-9)</h3>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+         <h4 class="font-bold text-[#00D4FF] mb-3">🖨️ Expansion Equipmente</h4>
+         <ul class="space-y-2 text-gray-300">
+          <li>✓ 8-12 imprimante FDM</li>
+          <li>✓ 2-3 resin printers</li>
+          <li>✓ Post-processing station (sanding, dyeing)</li>
+          <li>✓ Atelier 60-80m²</li>
+         </ul>
+        </div>
+        <div>
+         <h4 class="font-bold text-[#00D4FF] mb-3">👥 Echipă &amp; Procese</h4>
+         <ul class="space-y-2 text-gray-300">
+          <li>✓ 1 Sales specialist (lead qualification)</li>
+          <li>✓ 2-3 Operators production</li>
+          <li>✓ 1 CAD designer</li>
+          <li>✓ CRM system (pipedrive / HubSpot)</li>
+         </ul>
+        </div>
+        <div>
+         <h4 class="font-bold text-[#00D4FF] mb-3">📣 Marketing Scaling</h4>
+         <ul class="space-y-2 text-gray-300">
+          <li>✓ €100-150/zi ads budget</li>
+          <li>✓ Weekly creative testing</li>
+          <li>✓ YouTube channel launched</li>
+          <li>✓ Email sequences (5+ drip campaigns)</li>
+         </ul>
+        </div>
+        <div>
+         <h4 class="font-bold text-[#00D4FF] mb-3">🎯 Ținte Lună 9</h4>
+         <ul class="space-y-2 text-gray-300">
+          <li>✓ 200+ comenzi/lună</li>
+          <li>✓ 50-70 comenzi finalizate/lună</li>
+          <li>✓ €15-25K monthly revenue</li>
+          <li>✓ B2B contracts initiated</li>
+         </ul>
+        </div>
+       </div>
+      </div><!-- FAZA 3 -->
+      <div class="phase-block phase-3">
+       <div class="flex items-center gap-4 mb-4">
+        <div class="w-12 h-12 bg-[#FF6B00] text-black rounded-full flex items-center justify-center font-bold text-lg">
+         3
+        </div>
+        <h3 id="phase3-title" class="font-orbitron text-2xl font-bold">FAZA 3 – DOMINARE (Luni 10-24)</h3>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+         <h4 class="font-bold text-[#FF6B00] mb-3">🏭 Full Production Facility</h4>
+         <ul class="space-y-2 text-gray-300">
+          <li>✓ 20-30 imprimante FDM</li>
+          <li>✓ 5+ resin printers</li>
+          <li>✓ Full automation workflow</li>
+          <li>✓ Hală 200m² + offices</li>
+         </ul>
+        </div>
+        <div>
+         <h4 class="font-bold text-[#FF6B00] mb-3">👥 Full Team</h4>
+         <ul class="space-y-2 text-gray-300">
+          <li>✓ 2 Sales specialists</li>
+          <li>✓ 8-10 production staff</li>
+          <li>✓ 2-3 CAD designers</li>
+          <li>✓ 1 Marketing manager</li>
+          <li>✓ 1 Operations manager</li>
+         </ul>
+        </div>
+        <div>
+         <h4 class="font-bold text-[#FF6B00] mb-3">📣 Market Leader Position</h4>
+         <ul class="space-y-2 text-gray-300">
+          <li>✓ €200-300/zi ads budget</li>
+          <li>✓ YouTube: 2 videos/săptămână</li>
+          <li>✓ Branded podcast/academy</li>
+          <li>✓ B2B partnerships + B2G</li>
+         </ul>
+        </div>
+        <div>
+         <h4 class="font-bold text-[#FF6B00] mb-3">🎯 Ținte Lună 24</h4>
+         <ul class="space-y-2 text-gray-300">
+          <li>✓ 800+comenzi/lună</li>
+          <li>✓ 70-80% fulfillment rate</li>
+          <li>✓ €80-120K monthly revenue</li>
+          <li>✓ Franchise model ready</li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- TEAM STRUCTURE -->
+   <section id="team" class="py-12 md:py-20 bg-[#1a1a1a]">
+    <div class="max-w-7xl mx-auto px-4">
+     <h2 class="font-orbitron text-3xl md:text-5xl font-bold text-center mb-12">👥 Structura de <span class="text-[#FFE500]">Echipă</span></h2><!-- Organizational Chart -->
+     <div class="flex flex-col items-center gap-8"><!-- CEO -->
+      <div class="team-card max-w-xs w-full">
+       <p class="text-3xl mb-2">👨‍💼</p>
+       <h3 class="font-bold text-lg">CEO / Founder</h3>
+       <p class="text-sm text-gray-400">Vision, Strategy, Relationships</p>
+      </div><!-- Line down -->
+      <div class="w-1 h-8 bg-gradient-to-b from-[#FFE500] to-transparent"></div><!-- Second tier -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl w-full">
+       <div class="team-card">
+        <p class="text-3xl mb-2">📱</p>
+        <h3 class="font-bold">Sales Lead</h3>
+        <p class="text-xs text-gray-400">Leads, Calls, Deals</p>
+       </div>
+       <div class="team-card">
+        <p class="text-3xl mb-2">📊</p>
+        <h3 class="font-bold">Ads Manager</h3>
+        <p class="text-xs text-gray-400">Paid, Creative, Funnels</p>
+       </div>
+       <div class="team-card">
+        <p class="text-3xl mb-2">📐</p>
+        <h3 class="font-bold">CAD Designer</h3>
+        <p class="text-xs text-gray-400">Modeling, Optimization</p>
+       </div>
+       <div class="team-card">
+        <p class="text-3xl mb-2">🖨️</p>
+        <h3 class="font-bold">Production Ops</h3>
+        <p class="text-xs text-gray-400">Printing, QC, Output</p>
+       </div>
+       <div class="team-card">
+        <p class="text-3xl mb-2">📦</p>
+        <h3 class="font-bold">Logistics</h3>
+        <p class="text-xs text-gray-400">Packing, Shipping, Tracking</p>
+       </div>
+       <div class="team-card">
+        <p class="text-3xl mb-2">📲</p>
+        <h3 class="font-bold">Social Media</h3>
+        <p class="text-xs text-gray-400">Content, Engagement, Growth</p>
+       </div>
+      </div>
+     </div><!-- Role Breakdown -->
+     <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="card-neon rounded-xl p-6">
+       <h3 class="font-bold text-[#FFE500] mb-4">Sales &amp; Revenue</h3>
+       <ul class="space-y-2 text-gray-400 text-sm">
+        <li>👤 <strong>Sales Specialist</strong>: Lead qualification, phone calls, closing deals, upselling</li>
+        <li>📧 Follow-up: SMS, email, WhatsApp automation sequences</li>
+        <li>🎯 Target: 30-40% conversion from quote to order</li>
+       </ul>
+      </div>
+      <div class="card-neon rounded-xl p-6">
+       <h3 class="font-bold text-[#00D4FF] mb-4">Marketing &amp; Growth</h3>
+       <ul class="space-y-2 text-gray-400 text-sm">
+        <li>📊 <strong>Ads Manager</strong>: Facebook/Instagram campaigns, budget allocation, A/B testing</li>
+        <li>📱 <strong>Social Media</strong>: TikTok, Reels, YouTube, community engagement</li>
+        <li>💰 Target: €2-5 cost-per-lead, 10-15% conversion rate</li>
+       </ul>
+      </div>
+      <div class="card-neon rounded-xl p-6">
+       <h3 class="font-bold text-[#FF6B00] mb-4">Design &amp; Technical</h3>
+       <ul class="space-y-2 text-gray-400 text-sm">
+        <li>📐 <strong>CAD Designer</strong>: Model optimization, material recommendations, complex geometry</li>
+        <li>🖨️ <strong>Production Ops</strong>: Machine operation, slicing, print monitoring, QC</li>
+        <li>⏱️ Target: 98%+ print success rate, &lt;0.5mm tolerances</li>
+       </ul>
+      </div>
+      <div class="card-neon rounded-xl p-6">
+       <h3 class="font-bold text-[#FFE500] mb-4">Operations &amp; Delivery</h3>
+       <ul class="space-y-2 text-gray-400 text-sm">
+        <li>📦 <strong>Logistics</strong>: Finishing, packaging, courier coordination, tracking updates</li>
+        <li>📞 <strong>Support</strong>: 24h response on questions, issue resolution</li>
+        <li>⭐ Target: &lt;2% return rate, 4.9+ stars rating</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- KPI DASHBOARD -->
+   <section class="py-12 md:py-20 bg-[#0a0a0a]">
+    <div class="max-w-7xl mx-auto px-4">
+     <h2 class="font-orbitron text-3xl md:text-5xl font-bold text-center mb-12">📊 KPI Dashboard — <span class="text-[#FFE500]">Key Metrics</span></h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"><!-- Lead Generation -->
+      <div class="kpi-stat highlight">
+       <p class="text-4xl font-bold text-black mb-2">100-150</p>
+       <p class="text-sm text-black font-semibold">Monthly Leads</p>
+       <p class="text-xs text-gray-600 mt-1">From paid ads</p>
+      </div><!-- Cost Per Lead -->
+      <div class="kpi-stat">
+       <p class="text-4xl font-bold text-[#FFE500] mb-2">€2-4</p>
+       <p class="text-sm text-gray-300 font-semibold">Cost Per Lead</p>
+       <p class="text-xs text-gray-500 mt-1">Target CPL</p>
+      </div><!-- Conversion Rate -->
+      <div class="kpi-stat">
+       <p class="text-4xl font-bold text-[#00D4FF] mb-2">30-40%</p>
+       <p class="text-sm text-gray-300 font-semibold">Quote-to-Order</p>
+       <p class="text-xs text-gray-500 mt-1">Conversion ratio</p>
+      </div><!-- Profit Per Order -->
+      <div class="kpi-stat">
+       <p class="text-4xl font-bold text-[#FF6B00] mb-2">€30-60</p>
+       <p class="text-sm text-gray-300 font-semibold">Profit Per Order</p>
+       <p class="text-xs text-gray-500 mt-1">Average margin</p>
+      </div><!-- Print Success Rate -->
+      <div class="kpi-stat highlight">
+       <p class="text-4xl font-bold text-black mb-2">98%+</p>
+       <p class="text-sm text-black font-semibold">Print Success Rate</p>
+       <p class="text-xs text-gray-600 mt-1">First-time quality</p>
+      </div><!-- Time to Delivery -->
+      <div class="kpi-stat">
+       <p class="text-4xl font-bold text-[#FFE500] mb-2">2-5</p>
+       <p class="text-sm text-gray-300 font-semibold">Days to Delivery</p>
+       <p class="text-xs text-gray-500 mt-1">After confirmation</p>
+      </div><!-- Customer Rating -->
+      <div class="kpi-stat">
+       <p class="text-4xl font-bold text-[#00D4FF] mb-2">4.8+</p>
+       <p class="text-sm text-gray-300 font-semibold">Star Rating</p>
+       <p class="text-xs text-gray-500 mt-1">Customer satisfaction</p>
+      </div><!-- Monthly Revenue -->
+      <div class="kpi-stat">
+       <p class="text-4xl font-bold text-[#FF6B00] mb-2">€5-10K</p>
+       <p class="text-sm text-gray-300 font-semibold">Phase 1 Monthly Rev</p>
+       <p class="text-xs text-gray-500 mt-1">Scaling monthly</p>
+      </div><!-- Repeat Customer Rate -->
+      <div class="kpi-stat highlight">
+       <p class="text-4xl font-bold text-black mb-2">35%+</p>
+       <p class="text-sm text-black font-semibold">Repeat Orders</p>
+       <p class="text-xs text-gray-600 mt-1">Customer loyalty</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- DIFFERENTIATION -->
+   <section class="py-12 md:py-20 bg-[#1a1a1a]">
+    <div class="max-w-7xl mx-auto px-4">
+     <h2 class="font-orbitron text-3xl md:text-5xl font-bold text-center mb-12">💡 Diferențiere Față de <span class="text-[#FFE500]">Concurență</span></h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="card-neon rounded-xl p-6 border-l-4 border-[#FFE500]">
+       <h3 class="font-bold text-lg text-[#FFE500] mb-3">✓ Livrare Gratuită</h3>
+       <p class="text-gray-400">Transport inclus în toată România. Aceasta e un game-changer — clienții preferă simplitate.</p>
+      </div>
+      <div class="card-neon rounded-xl p-6 border-l-4 border-[#00D4FF]">
+       <h3 class="font-bold text-lg text-[#00D4FF] mb-3">✓ Răspuns în 24h</h3>
+       <p class="text-gray-400">Avem sistem de calificare rapid. Majoritatea competitorilor nu răspund zilele 2-3.</p>
+      </div>
+      <div class="card-neon rounded-xl p-6 border-l-4 border-[#FF6B00]">
+       <h3 class="font-bold text-lg text-[#FF6B00] mb-3">✓ Consultanță Inclusă</h3>
+       <p class="text-gray-400">Nu doar printez — îi ajut pe clienți să optimizeze designul, materialul, prețul. Value-added service.</p>
+      </div>
+      <div class="card-neon rounded-xl p-6 border-l-4 border-[#FFE500]">
+       <h3 class="font-bold text-lg text-[#FFE500] mb-3">✓ Branding Premium</h3>
+       <p class="text-gray-400">Design futurist, social media profesional, content cinematic. Percepție de lider, nu outsourcer.</p>
+      </div>
+      <div class="card-neon rounded-xl p-6 border-l-4 border-[#00D4FF]">
+       <h3 class="font-bold text-lg text-[#00D4FF] mb-3">✓ Transparență 100%</h3>
+       <p class="text-gray-400">Pricelist public, no hidden fees, tracking real-time, case studies deschise. Trust = conversions.</p>
+      </div>
+      <div class="card-neon rounded-xl p-6 border-l-4 border-[#FF6B00]">
+       <h3 class="font-bold text-lg text-[#FF6B00] mb-3">✓ Multi-Channel Presence</h3>
+       <p class="text-gray-400">Ads + TikTok + YouTube + email. Competitori sunt doar pe FB. Atingem clienții peste tot.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- 5-YEAR VISION -->
+   <section class="py-12 md:py-20 bg-[#0a0a0a]">
+    <div class="max-w-7xl mx-auto px-4">
+     <h2 class="font-orbitron text-3xl md:text-5xl font-bold text-center mb-4">🚀 Viziunea pe 5 <span class="text-[#FFE500]">ANI</span></h2>
+     <p class="text-gray-400 text-center mb-12">End goal: market domination + ecosystem play</p>
+     <div class="space-y-6">
+      <div class="timeline-item">
+       <h3 class="font-orbitron text-xl font-bold mb-2">Year 1: Market Foothold</h3>
+       <p class="text-gray-400">€150K annual revenue, 500+ customers, 1000+ reviews. Lider regional (București-Ilfov).</p>
+      </div>
+      <div class="timeline-item">
+       <h3 class="font-orbitron text-xl font-bold mb-2">Year 2: Expansion</h3>
+       <p class="text-gray-400">€600K annual revenue, national presence, B2B contracts with SMEs &amp; corporates. Team: 15 people.</p>
+      </div>
+      <div class="timeline-item">
+       <h3 class="font-orbitron text-xl font-bold mb-2">Year 3: Domination</h3>
+       <p class="text-gray-400">€1.5M annual revenue, unmatched market share, establish brand as #1 in 3D printing. Multiple facility locations.</p>
+      </div>
+      <div class="timeline-item">
+       <h3 class="font-orbitron text-xl font-bold mb-2">Year 4: Ecosystem</h3>
+       <p class="text-gray-400">printIT Academy (online courses), Marketplace de modele 3D, Franchise model ready for expansion.</p>
+      </div>
+      <div class="timeline-item">
+       <h3 class="font-orbitron text-xl font-bold mb-2">Year 5: Leadership</h3>
+       <p class="text-gray-400">€3M+ annual revenue, 40+ team members, 5 facilities nationwide, recognized as Europe's fastest-growing 3D printing brand.</p>
+      </div>
+     </div><!-- Milestone Goals -->
+     <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card-neon rounded-xl p-6 text-center">
+       <p class="text-3xl font-bold text-[#FFE500] mb-2">+100K</p>
+       <p class="text-gray-300">Prints delivered</p>
+      </div>
+      <div class="card-neon rounded-xl p-6 text-center">
+       <p class="text-3xl font-bold text-[#00D4FF] mb-2">#1</p>
+       <p class="text-gray-300">National market leader</p>
+      </div>
+      <div class="card-neon rounded-xl p-6 text-center">
+       <p class="text-3xl font-bold text-[#FF6B00] mb-2">40+</p>
+       <p class="text-gray-300">Team members</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- FINAL CTA -->
+   <section class="py-16 md:py-24 bg-gradient-to-r from-[#FFE500]/10 via-[#0a0a0a] to-[#00D4FF]/10">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+     <h2 id="cta-final" class="font-orbitron text-3xl md:text-5xl font-bold mb-6">Vrei să construim acest <span class="text-[#FFE500]">SISTEM</span>?</h2>
+     <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">Aceasta nu e doar o afacere — e o mișcare. Hai să dominăm piața de printare 3D în România.</p><a href="mailto:contact@printit.ro" class="inline-block bg-[#FFE500] text-black font-bold text-lg px-12 py-5 rounded-xl hover:bg-[#FFC800] transition-all glow-yellow"> Hai să începem! 🚀 </a>
+    </div>
+   </section><!-- Footer -->
+   <footer class="bg-[#0a0a0a] border-t border-gray-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+     <p class="text-gray-500 mb-4">print<span class="text-[#FFE500]">IT</span> Growth System © 2024</p>
+     <p class="text-gray-600 text-sm">Strategic roadmap for market domination. Internal use only.</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      hero_title: 'printIT Growth System',
+      hero_subtitle: 'Planul complet pentru dominarea pieței de printare 3D în România',
+      vision_title: 'VIZIUNE',
+      phase1_title: 'FAZA 1 – STARTUP',
+      phase2_title: 'FAZA 2 – GROWTH',
+      phase3_title: 'FAZA 3 – DOMINARE',
+      cta_final: 'Vrei să construim acest SISTEM?'
+    };
+
+    let config = { ...defaultConfig };
+
+    async function onConfigChange(newConfig) {
+      config = { ...defaultConfig, ...newConfig };
+
+      const heroTitle = document.getElementById('hero-title');
+      if (heroTitle) {
+        heroTitle.textContent = config.hero_title || defaultConfig.hero_title;
+      }
+
+      const heroSubtitle = document.getElementById('hero-subtitle');
+      if (heroSubtitle) {
+        heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+      }
+
+      const phase1 = document.getElementById('phase1-title');
+      if (phase1) {
+        phase1.textContent = config.phase1_title || defaultConfig.phase1_title;
+      }
+
+      const phase2 = document.getElementById('phase2-title');
+      if (phase2) {
+        phase2.textContent = config.phase2_title || defaultConfig.phase2_title;
+      }
+
+      const phase3 = document.getElementById('phase3-title');
+      if (phase3) {
+        phase3.textContent = config.phase3_title || defaultConfig.phase3_title;
+      }
+
+      const ctaFinal = document.getElementById('cta-final');
+      if (ctaFinal) {
+        ctaFinal.textContent = config.cta_final ? config.cta_final + ' ' : defaultConfig.cta_final + ' ';
+        ctaFinal.innerHTML = (config.cta_final || defaultConfig.cta_final).replace('SISTEM', '<span class="text-[#FFE500]">SISTEM</span>');
+      }
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['hero_title', config.hero_title || defaultConfig.hero_title],
+        ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+        ['vision_title', config.vision_title || defaultConfig.vision_title],
+        ['phase1_title', config.phase1_title || defaultConfig.phase1_title],
+        ['phase2_title', config.phase2_title || defaultConfig.phase2_title],
+        ['phase3_title', config.phase3_title || defaultConfig.phase3_title],
+        ['cta_final', config.cta_final || defaultConfig.cta_final]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c9912a2b131c9dd',t:'MTc3MDM2NDM5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
