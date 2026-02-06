@@ -91,7 +91,7 @@ Prototipuri industriale
 
 Educațional / tips & tricks
 
-📞 Sales Playbook
+## 📞 Sales Playbook
 
 Lead-ul trebuie contactat în maxim 5–10 minute
 
@@ -107,7 +107,7 @@ Follow-up SMS / email
 
 Solicitare review post-livrare
 
-⚙️ Operațiuni
+## ⚙️ Operațiuni
 
 Workflow producție & imprimante
 
@@ -119,7 +119,7 @@ Management stocuri și materiale
 
 Mentenanță imprimante
 
-📊 KPI-uri
+## 📊 KPI-uri
 
 Cost / lead
 
@@ -133,7 +133,7 @@ Profit / comandă
 
 Review-uri clienți
 
-🚀 Plan de Scalare
+## 🚀 Plan de Scalare
 
 Faza 1 – Startup
 
@@ -167,7 +167,7 @@ Francizare / marketplace 3D
 
 Focus: leadership național pe nișă
 
-🧩 Diferențiere față de competiție
+## 🧩 Diferențiere față de competiție
 
 Livrare gratuită
 
@@ -179,7 +179,7 @@ Branding premium & LEGO-tech
 
 Materiale profesionale
 
-🧪 Cum se folosește acest repository
+## 🧪 Cum se folosește acest repository
 
 Clonează repository-ul
 
@@ -207,7 +207,7 @@ SEO & content
 
 Strategii B2B
 
-📄 Licență
+## 📄 Licență
 
 Proprietate internă printIT.
 Documentația și materialele sunt destinate exclusiv echipei și partenerilor.
