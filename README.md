@@ -32,7 +32,7 @@ Livrare gratuită în toată România
 
 🎥 Framework pentru conținut viral social media
 
-### 🧭 Obiectiv
+## 🧭 Obiectiv
 
 Construirea celui mai rapid și scalabil serviciu de printare 3D din România — orientat pe:
 
@@ -45,3 +45,48 @@ automatizare
 branding puternic
 
 prezență omnichannel
+
+## 🎨 Design System
+
+Fundal: negru
+
+Accente: galben electric, gri închis
+
+Stil: LEGO-inspired, futurist, 3D
+
+Mobile-first & responsive
+
+Font bold pentru titluri
+
+CTA-uri evidente și vizibile pe mobil
+
+## 📣 Marketing & Growth
+Canale principale:
+
+Facebook / Instagram Ads (Instant Forms + WhatsApp)
+
+TikTok organic (reels & shorts)
+
+YouTube Shorts și vlog-uri educaționale
+
+Retargeting Meta + Google Ads
+
+Parteneriate B2B
+
+Tipuri de conținut viral:
+
+Time-lapse printare
+
+Before / after prints
+
+Satisfying prints
+
+Fail → Fix
+
+POV atelier
+
+Reacții clienți
+
+Prototipuri industriale
+
+Educațional / tips & tricks
