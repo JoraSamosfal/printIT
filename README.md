@@ -90,3 +90,124 @@ Reacții clienți
 Prototipuri industriale
 
 Educațional / tips & tricks
+
+📞 Sales Playbook
+
+Lead-ul trebuie contactat în maxim 5–10 minute
+
+Script apel rapid:
+
+„Salut, sunt [nume] de la printIT. Ați cerut ofertă pentru printare 3D. Vreau să înțeleg exact ce aveți nevoie ca să vă dau prețul corect.”
+
+Calificare lead
+
+Oferte clare + upsell (finisare, materiale premium, livrare rapidă)
+
+Follow-up SMS / email
+
+Solicitare review post-livrare
+
+⚙️ Operațiuni
+
+Workflow producție & imprimante
+
+Control calitate (QA)
+
+Ambalare și livrare
+
+Management stocuri și materiale
+
+Mentenanță imprimante
+
+📊 KPI-uri
+
+Cost / lead
+
+Conversie lead → client
+
+Valoare medie comandă
+
+Timp producție
+
+Profit / comandă
+
+Review-uri clienți
+
+🚀 Plan de Scalare
+
+Faza 1 – Startup
+
+2–3 imprimante
+
+Fondator = sales
+
+Ads mici 10–30€/zi
+
+Focus: prototipuri & hobby
+
+Faza 2 – Growth
+
+Echipa: designer CAD, operator imprimante, sales dedicat
+
+CRM implementat
+
+Ads 50–150€/zi
+
+Focus: B2C & B2B
+
+Faza 3 – Dominare
+
+Hală de producție
+
+20+ imprimante
+
+Contracte B2B
+
+Francizare / marketplace 3D
+
+Focus: leadership național pe nișă
+
+🧩 Diferențiere față de competiție
+
+Livrare gratuită
+
+Răspuns rapid
+
+Consultanță gratuită
+
+Branding premium & LEGO-tech
+
+Materiale profesionale
+
+🧪 Cum se folosește acest repository
+
+Clonează repository-ul
+
+Studiază folderul business-plan/
+
+Urmează roadmap.md
+
+Implementează SOP-urile
+
+Construiește site-ul & activează ads
+
+Monitorizează KPI-urile și optimizează
+
+🛠️ Contribuții
+
+Propunerile sunt binevenite:
+
+Optimizare funnel
+
+Noi creative pentru social
+
+Automatizări & workflow
+
+SEO & content
+
+Strategii B2B
+
+📄 Licență
+
+Proprietate internă printIT.
+Documentația și materialele sunt destinate exclusiv echipei și partenerilor.
